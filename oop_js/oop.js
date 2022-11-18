@@ -1,15 +1,15 @@
 class Animal {
-   constructor(name, age, isMammal) {
-      this.name = name;
-      this.age = age;
-      this.isMammal = isMammal;
+   constructor() {
+      this.name = "";
+      this.age = 0;
+      this.isMammal = false;
    }
 
 }
 
 class Rabit extends Animal {
    function eat(name) {
-      `${this.name} sedang makan!`
+      return `${this.name} sedang makan!`
    }
 }
 
