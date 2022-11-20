@@ -9,4 +9,4 @@ class Tiger {
 }
 
 // TODO 1
-export default Tiger;
+export { Tiger };

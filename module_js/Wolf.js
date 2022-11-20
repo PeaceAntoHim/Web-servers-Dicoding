@@ -9,4 +9,4 @@ class Wolf {
 }
 
 // TODO 2
-export default Wolf;
+export { Wolf };
