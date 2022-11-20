@@ -15,6 +15,8 @@
 
 // TODO 3
 
+import { Tiger, Wolf } from "./";
+
 const fight = (tiger, wolf) => {
   if (tiger.strength > wolf.strength) {
     return tiger.growl();
@@ -29,5 +31,7 @@ const myTiger = new Tiger();
 const myWolf = new Wolf();
 
 const result = fight(myTiger, myWolf);
+
+export default { myTiger, myWolf, result };
 
 // TODO 4
