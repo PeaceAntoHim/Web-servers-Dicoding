@@ -42,28 +42,46 @@
  *   - bila block catch terpanggil, kembalikan fungsi detectTriangle dengan pesan error yang dibawa fungsi validateNumberInput.
  */
 
-
 // TODO 1
 
-// TODO 2
+class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
 
+// TODO 2
+function validateNumberInput(arg1, arg2, arg3) {
+  if (typeof arg1 != "number") {
+    throw new ValidationError("Argumen pertama harus number");
+  } else if (typeof arg2 != "number") {
+    throw new ValidationError("Argumen kedua harus number");
+  } else if (typeof arg3 != "number") {
+    throw new ValidationError("Argumen ketiga harus number");
+  }
+}
 
 const detectTriangle = (a, b, c) => {
-   // TODO 3
- 
-   if (a === b && b === c) {
-     return 'Segitiga sama sisi';
-   }
- 
-   if (a === b || a === c || b === c) {
-     return 'Segitiga sama kaki';
-   }
- 
-   return 'Segitiga sembarang';
- };
- 
- /**
-  * Jangan hapus kode di bawah ini
-  */
- module.exports = { ValidationError, validateNumberInput, detectTriangle };
- 
+  // TODO 3
+
+  try {
+    validateNumberInput(a, b, c);
+  } catch (e) {
+    return e.message;
+  }
+  if (a === b && b === c) {
+    return "Segitiga sama sisi";
+  }
+
+  if (a === b || a === c || b === c) {
+    return "Segitiga sama kaki";
+  }
+
+  return "Segitiga sembarang";
+};
+
+/**
+ * Jangan hapus kode di bawah ini
+ */
+module.exports = { ValidationError, validateNumberInput, detectTriangle };
