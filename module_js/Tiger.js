@@ -9,4 +9,4 @@ class Tiger {
 }
 
 // TODO 1
-export { Tiger };
+module.exports = Tiger;

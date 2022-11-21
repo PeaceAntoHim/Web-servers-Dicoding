@@ -14,11 +14,8 @@
  */
 
 // TODO 3
-
-import { Tiger } from "./Tiger.js";
-import { Wolf } from "./Wolf.js";
-
-console.log(Tiger);
+const Tiger = require("./Tiger.js");
+const Wolf = require("./Wolf.js");
 
 const fight = (tiger, wolf) => {
   if (tiger.strength > wolf.strength) {
@@ -35,8 +32,8 @@ const myWolf = new Wolf();
 
 const result = fight(myTiger, myWolf);
 
-console.log(result);
+console.log(`ini result ${result}`);
 
-export { fight, myTiger, myWolf, result };
+module.exports = { fight, myTiger, myWolf, result };
 
 // TODO 4

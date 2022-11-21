@@ -9,4 +9,4 @@ class Wolf {
 }
 
 // TODO 2
-export { Wolf };
+module.exports = Wolf;
