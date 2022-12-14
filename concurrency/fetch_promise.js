@@ -21,3 +21,5 @@ async function gettingUserName() {
     return error.message;
   }
 }
+
+module.exports = { fetchingUserFromInternet, gettingUserName, NetworkError };
