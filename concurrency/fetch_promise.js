@@ -1,3 +1,10 @@
+class NetworkError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "NetworkError";
+  }
+}
+
 const fetchingUserFromInternet = (isOffline) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
