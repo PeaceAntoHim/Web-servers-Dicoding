@@ -18,6 +18,25 @@ const addNoteHandler = (request, h) => {
   };
 
   notes.push(newNote);
+  const isSuccess = notes.filter((note) => note.id === id).length > 0;
+
+  if (isSuccess) {
+    const response = h.response({
+      status: "success",
+      message: "Catatan berhasil ditambahkan",
+      data: {
+        noteId: id,
+      },
+    });
+    response.code(201);
+  }
+
+  const response = h.response({
+    status: "fail",
+    message: "Catatan gagal ditambahkan",
+  });
+  response.code(500);
+  return response;
 };
 
 module.exports = { addNoteHandler };
